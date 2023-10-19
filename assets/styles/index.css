@@ -1,0 +1,96 @@
+* {
+  padding: 0;
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  box-sizing: border-box;
+}
+li {
+  list-style: none;
+}
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.2rem 2rem;
+  border-bottom: 1px solid #eaeaea;
+  position: sticky;
+  top: 0;
+}
+.pmtLogo {
+  width: 6rem;
+}
+.navbarLinks {
+  display: flex;
+  align-items: center;
+  text-transform: capitalize;
+  font-weight: 600;
+}
+.link {
+  margin: 0 1rem;
+  padding: 1rem;
+  cursor: pointer;
+}
+.animatedMenuIcon,
+#checkbox {
+  display: none;
+}
+.socialMediaWrapper {
+  display: none;
+}
+@media screen and (max-width: 768px) {
+  header {
+    padding: 0.1rem 1rem;
+  }
+  .animatedMenuIcon {
+    display: block;
+  }
+  .navbarContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    position: fixed;
+    height: 0;
+    transition: height 0.4s ease-in-out;
+    overflow: hidden; /* overflow hidden to hide the content */
+    left: 0;
+    width: 100%;
+    margin-top: 35px;
+    z-index: 111;
+  }
+  .navbarLinks {
+    flex-direction: column;
+  }
+  .bar1,
+  .bar2,
+  .bar3 {
+    width: 35px;
+    height: 5px;
+    background-color: #333;
+    margin: 6px 0;
+    transition: 0.4s;
+  }
+  .socialMediaIcons{
+    display: flex;
+    justify-content: center;
+  }
+  /* To animate the bars */
+  #checkbox:checked ~ .animatedMenuIcon .bar1 {
+    transform: translate(0, 11px) rotate(-45deg);
+  }
+  #checkbox:checked ~ .animatedMenuIcon .bar2 {
+    opacity: 0;
+  }
+  #checkbox:checked ~ .animatedMenuIcon .bar3 {
+    transform: translate(0, -11px) rotate(45deg);
+  }
+  #checkbox:checked + nav .navbarContent {
+    height: 100vh;
+    transition: height 0.4s ease-in-out;
+    padding-bottom: 6rem;
+  }
+  #checkbox:checked + nav .navbarContent .socialMediaWrapper {
+    display: flex;
+    flex-direction: column;
+  }
+}

@@ -5,24 +5,58 @@
   <!-- contains meta information about the HTML page -->
   <head>
     <title>PMT</title>
-    <link rel="stylesheet" href="./assits/styles/index.css" />
+    <link rel="stylesheet" href="./assets/styles/index.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
       rel="stylesheet"
     />
   </head>
   <!-- The container for all the visible contents -->
+
   <body>
     <header>
       <!-- Logo page -->
-      <img src="./assits/images/pmt.jpg" alt="Logo" class="logoPage" />
-      <ul class="menuItems">
-        <li class="navItem">Home</li>
-        <li class="navItem">About</li>
-        <li class="navItem">Contact Us</li>
-      </ul>
+      <img src="./assets/images/pmt.jpg" alt="Logo" class="pmtLogo" />
+      <!-- Checkbox here because CSS does not provide a previous sibling selector,
+      which means you cannot select an element based on a sibling that comes before
+      it in the HTML structure. -->
+      <input id="checkbox" type="checkbox" />
+      <nav>
+        <div class="navbarContent">
+          <!-- Navbar Items -->
+          <ul class="navbarLinks">
+            <li class="link">Home</li>
+            <li class="link">About</li>
+            <li class="link">Contact Us</li>
+          </ul>
+          <!-- Social Media Wrapper -->
+          <div class="socialMediaWrapper">
+            <img src="./assets/images/welcome.png" alt="welcomeImage" />
+            <!-- Social Media Icons -->
+            <div class="socialMediaIcons">
+              <img src="./assets/images/facebookIcon.png" alt="facebookIcon" />
+              <img
+                src="./assets/images/instagramIcons.png"
+                alt="instagramIcons"
+              />
+              <img src="./assets/images/linkedinIcon.png" alt="linkedinIcon" />
+              <img
+                src="./assets/images/pinterestIcon.png"
+                alt="pinterestIcon"
+              />
+            </div>
+          </div>
+        </div>
+      </nav>
+      <!-- Animated Menu Icon -->
+      <label for="checkbox" class="animatedMenuIcon">
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
+      </label>
     </header>
   </body>
 </html>
